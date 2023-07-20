@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>LoveLol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="style.css">  
+
+    <title>Document</title>
 </head>
 <body>
     <header id="header">
         <div class="header__container">
-            <img src="./img/LOGO.png" alt="logo-LoveLol">
-            <img src="image.png" alt="title-img">
-        </div>
+            <img src="./img/LOGO.png" alt="logo-LoveLol" class="logo">
+            <img  src="./img/NombreEquipo.png" alt="title-img" class="title-logo">
+        </div>  
+        <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  <ul class="menu-items">
+    <li><a href="#">Log In</a></li>
+    <li><a href="#">Sign Up</a></li>
+    <li><a href="#">Profile</a></li>
+  </ul>
+</body>
+</html>         
     </header>
 
     <main id="main">
@@ -76,6 +86,7 @@
                     <button class="main__heart-button" type="button"></button>
                 </div>
             </div>
+
 
         
         <script src="./home.js"></script>

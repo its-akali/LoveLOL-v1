@@ -8,18 +8,24 @@ body{
         to bottom,#0AC8B9, #005A82,#091428
     );
     padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header__container img{
-    height: 9vh;
+.logo{
+    height: 8vh;
     border-radius: 100%;
 }
 
+.title-logo{
+    height: 6vh;
+    align-self: center;
+}
 #main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     margin:0;
     background-image: linear-gradient(
         to bottom, #091428,#0A1428
@@ -36,21 +42,19 @@ body{
     justify-content: center;
     margin-top: 5%;
     border: none;
-    width: 50%;
+    width: 25vw;
     background-color: #36938B;
     border-radius: 20px;
     margin-bottom: 10%;
 }
 
 .main__img-container{
-    width: 35vw;
-    height: 15vh;
+    width: 25vw;
     
 }
 
 .main__img-container img{
-    width: 35vw;
-    height: 15vh;
+    width: 25vw;
 }
 
 .main__text-container{
@@ -59,11 +63,12 @@ body{
     justify-content: space-between;
     height: 5vh;
     width: 100%;
+    margin-bottom: 10%;
 
 }
 
 h3{
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
 
 }
 
@@ -80,14 +85,16 @@ h3{
     color: white;
     border-radius: 10px;
     border: none;
+    height: 4vw;
     text-align: center;
+    font-size: clamp(0.8rem,1.5vw, 2rem);
 }
 
 .main__heart-button{
-    height: 2vh;
+    height: 3vh;
     width: 5vw;
     background-image: url(./img/amor.png);
-    background-size: 100%;
+    background-size: clamp(2,5vh);
     background-color: #36938B;
     background-position: center;
     background-repeat: no-repeat;
@@ -96,27 +103,96 @@ h3{
 
 }
 
-.main__2-post{
-    padding: 3%;
-    display: grid;
-    justify-content: center;
-    margin-top: 5%;
-    border: none;
-    width: 50%;
-    background-color: #36938B;
-    border-radius: 20px;
-    margin-bottom: 10%;
-}
-
 footer {
-    background-image: linear-gradient(   to bottom,#091428 , #005A82, #0AC8B9  );
+    background-image: linear-gradient(     to bottom,#091428 , #005A82, #0AC8B9   );
     font-family: 'Roboto', sans-serif;
-}
+  }
+  
+  footer p:first-child{
+      font-size: 25px;
+  }
+  
+  footer p:nth-child(2){
+      font-size: 14px;
+  }
+  
 
-footer p:first-child{
-        font-size: 25px;
-}
-
-footer p:nth-child(2){
-        font-size: 14px;
-}
+/*menu hamburguesa*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-items li {
+    margin-right: 20px;
+  }
+  
+  .menu-items li a {
+    text-decoration: none;
+    color: #333;
+  }
+  #menu-toggle{
+    visibility: hidden;
+  }
+  
+  /* Estilos para pantallas más pequeñas (máx. ancho de 768px) */
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+      top: 10vh;
+      right: 10px;
+      z-index: 3;
+    }
+  
+    .menu-items {
+      display: none;
+      flex-direction: column;
+    background-color: white;
+    
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 1;
+    }
+  
+    .menu-items li {
+      margin-right: 0;
+      padding: 10px 0;
+    }
+  
+    .menu-items li a {
+      color: #333;
+    }
+  
+    #menu-toggle:checked + .menu-icon {
+      color: black;
+    }
+  
+    #menu-toggle:checked ~ .menu-items {
+      display: flex;
+    }
+  
+    /* Agregar margen superior al main cuando el menú está abierto */
+    #menu-toggle:checked ~ #main {
+      transform: translateY(0%);
+    }
+  }
+  #menu-toggle{
+    visibility: hidden;
+  }
