@@ -20,7 +20,7 @@ function checkIfEmpty(input, error) {
 // Disable login option button, as we're already there
 const loginButton = document.querySelector("#loginButton");
 
-if (window.location.pathname == "/html/notionWithoutReact/index.html") {
+if (window.location.pathname == "/index.html" || window.location.pathname == "/") {
     loginButton.disabled = true;
 }
 
@@ -28,7 +28,7 @@ if (window.location.pathname == "/html/notionWithoutReact/index.html") {
 const registerButton = document.querySelector("#registerButton");
 
 registerButton.addEventListener("click", () => {
-    window.location.pathname = "/html/notionWithoutReact/register.html";
+    window.location.pathname = "/register.html";
 });
 
 // Adds a key up event listener in every input to check in real-time if the field is empty or not

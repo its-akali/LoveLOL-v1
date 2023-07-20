@@ -1,18 +1,19 @@
-import { checkIfEmpty } from "./login";
+import { checkIfEmpty } from "./login.js";
 
 // Redirect to login page
 const loginButton = document.querySelector("#loginButton");
 
 loginButton.addEventListener("click", () => {
-    if (window.location.pathname !== "/html/notionWithoutReact/index.html") {
-        window.location.pathname = "/html/notionWithoutReact/index.html";
+    console.log("a");
+    if (window.location.pathname !== "/index.html" || window.location.pathname == "/") {
+        window.location.pathname = "/index.html";
     }
 });
 
 // Disable register option button, as we're already there
 const registerButton = document.querySelector("#registerButton");
 
-if (window.location.pathname == "/html/notionWithoutReact/register.html") {
+if (window.location.pathname == "/register.html") {
     registerButton.disabled = true;
 }
 
