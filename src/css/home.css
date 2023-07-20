@@ -1,0 +1,111 @@
+body{
+    margin:0
+}
+
+#header{
+    height: 12vh;
+    background-image: linear-gradient(
+        to bottom,#0AC8B9, #005A82,#091428
+    );
+    padding: 2%;
+}
+
+.header__container img{
+    height: 9vh;
+    border-radius: 100%;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin:0;
+    background-image: linear-gradient(
+        to bottom, #091428,#0A1428
+    );
+}
+
+.main__title {
+    color: #C89B3C
+}
+
+.main__post{
+    padding: 3%;
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+    border: none;
+    width: 50%;
+    background-color: #36938B;
+    border-radius: 20px;
+    margin-bottom: 10%;
+}
+
+.main__img-container{
+    width: 35vw;
+    height: 15vh;
+    
+}
+
+.main__img-container img{
+    width: 35vw;
+    height: 15vh;
+}
+
+.main__text-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5vh;
+    width: 100%;
+
+}
+
+h3{
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+
+}
+
+.main__buttons{
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.main__add-button{
+    background-color: #C89B3C;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+
+.main__heart-button{
+    height: 2vh;
+    width: 5vw;
+    background-image: url(./img/amor.png);
+    background-size: 100%;
+    background-color: #36938B;
+    background-position: center;
+    background-repeat: no-repeat;
+    border:none ;
+    outline: none;
+
+}
+
+.main__2-post{
+    padding: 3%;
+    display: grid;
+    justify-content: center;
+    margin-top: 5%;
+    border: none;
+    width: 50%;
+    background-color: #36938B;
+    border-radius: 20px;
+    margin-bottom: 10%;
+}
+
+
