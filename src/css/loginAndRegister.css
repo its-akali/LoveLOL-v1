@@ -1,0 +1,147 @@
+:root {
+    --mainPurple: #d7a2d8;
+    --darkerPurple: #af4ab1;
+    --melon: #f18684;
+    --aqua: #7bcdba;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/ai_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+.nav-link {
+    color: black;
+
+}
+
+/* ------------------------- GLOBAL CLASSES --------------------------------- */
+
+.backgroundContainer {
+    background-color: rgba(245, 245, 245, 0.795);
+    padding: 3rem;
+    margin: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 565px;
+}
+
+.noStyleList {
+    list-style: none;
+}
+
+.noTextDecorLink {
+    text-decoration: none;
+}
+
+.back {
+    color: gray;
+}
+
+.create {
+    color: green;
+}
+
+.edit {
+    color: orangered;
+}
+
+.delete {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 15px;
+}
+
+.labelAndInput {
+    text-align: left;
+    width: 100%;
+}
+
+.labelAndInput:first-child {
+    margin-top: 1rem;
+}
+
+.labelAndInput label {
+    padding-left: 0.3rem;
+}
+
+form input[type="submit"] {
+    background-color: var(--mainPurple);
+    border: 1px solid var(--darkerPurple);
+    width: 100%;
+    align-self: flex-end;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: white;
+    color: var(--darkerPurple);
+    border: 1px solid var(--darkerPurple);
+    cursor: pointer;
+}
+
+.loginOrRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.loginOrRegister button {
+    padding: 0.6rem;
+    width: 50%;
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+
+.loginOrRegister button:disabled {
+    color: black;
+    font-weight: bold;
+    border-bottom: 3px solid var(--darkerPurple);
+}
+
+.errorInput {
+    border: 1px solid red;
+    background-color: var(--melon);
+}
+
+.errorMessage {
+    display: none;
+    color: red;
+    margin-left: 0.3rem;
+    font-style: italic;
+    font-size: 14px;
+}
