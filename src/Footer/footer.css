@@ -11,6 +11,7 @@ footer {
       font-size: 14px;
   }
   
+
    #footer-main-button {
       background-color: var(--secondary-color);
       color: #000;
@@ -20,4 +21,6 @@ footer {
       font-weight: 600;
       margin: 10px 0;
       font-size: 16px;
-      padding: 8px 19px; }
+      padding: 8px 19px; 
+      padding: 8px 19px;
+    }

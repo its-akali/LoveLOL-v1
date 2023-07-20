@@ -116,7 +116,7 @@ footer {
       font-size: 14px;
   }
   
-
+ /*si sabes como arreglar el menu hamburguesa para que no se superponga arreglalo por favor por q no supe como
 /*menu hamburguesa*/
 body {
     margin: 0;
@@ -148,14 +148,14 @@ body {
   #menu-toggle{
     visibility: hidden;
   }
-  
+ 
   /* Estilos para pantallas más pequeñas (máx. ancho de 768px) */
   @media screen and (max-width: 768px) {
     .menu-icon {
-      display: block;
-      top: 10vh;
-      right: 10px;
-      z-index: 3;
+    display: block;
+    top: 10vh;
+    right: 10px;
+    z-index: 3;
     }
   
     .menu-items {
