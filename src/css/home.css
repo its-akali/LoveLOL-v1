@@ -108,4 +108,15 @@ h3{
     margin-bottom: 10%;
 }
 
+footer {
+    background-image: linear-gradient(   to bottom,#091428 , #005A82, #0AC8B9  );
+    font-family: 'Roboto', sans-serif;
+}
 
+footer p:first-child{
+        font-size: 25px;
+}
+
+footer p:nth-child(2){
+        font-size: 14px;
+}
