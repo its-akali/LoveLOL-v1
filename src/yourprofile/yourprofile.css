@@ -1,0 +1,27 @@
+.title{
+color: black;
+background-color: #D9D9D9;
+padding-inline: 80% ;
+border-radius: 20px;
+text-align: center;
+}
+
+.container{
+    background-color: #36938B;
+    padding-inline: 80% ;
+    border-radius: 20px;
+}
+.imagen{
+    padding-inline: 80% ;
+    border-radius: 20px;
+}
+
+
+.text{
+color: black;
+text-align: center;
+background-color: #D9D9D9;
+padding-inline: 80% ;
+border-radius: 20px;
+
+}
