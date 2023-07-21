@@ -20,7 +20,7 @@ function checkIfEmpty(input, error) {
 // Disable login option button, as we're already there
 const loginButton = document.querySelector("#loginButton");
 
-if (window.location.pathname == "/index.html" || window.location.pathname == "/") {
+if (window.location.pathname == "/index.php" || window.location.pathname == "/") {
     loginButton.disabled = true;
 }
 
@@ -28,7 +28,7 @@ if (window.location.pathname == "/index.html" || window.location.pathname == "/"
 const registerButton = document.querySelector("#registerButton");
 
 registerButton.addEventListener("click", () => {
-    window.location.pathname = "/register.html";
+    window.location.pathname = "/register.php";
 });
 
 // Adds a key up event listener in every input to check in real-time if the field is empty or not
@@ -40,10 +40,9 @@ document.querySelectorAll(".labelAndInput").forEach((div) => {
     });
 });
 
-// Prevent default submit and check field values first
+/* // Prevent default submit and check field values first
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("sent!");
 });
-
+ */
 export { checkIfEmpty };

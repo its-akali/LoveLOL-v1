@@ -5,15 +5,15 @@ const loginButton = document.querySelector("#loginButton");
 
 loginButton.addEventListener("click", () => {
     console.log("a");
-    if (window.location.pathname !== "/index.html" || window.location.pathname == "/") {
-        window.location.pathname = "/index.html";
+    if (window.location.pathname !== "/login.php") {
+        window.location.pathname = "/login.php";
     }
 });
 
 // Disable register option button, as we're already there
 const registerButton = document.querySelector("#registerButton");
 
-if (window.location.pathname == "/register.html") {
+if (window.location.pathname == "/register.php") {
     registerButton.disabled = true;
 }
 

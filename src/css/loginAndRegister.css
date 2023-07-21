@@ -1,37 +1,56 @@
 :root {
-    --mainPurple: #d7a2d8;
-    --darkerPurple: #af4ab1;
+    --goldTitle: #c89b3c;
     --melon: #f18684;
-    --aqua: #7bcdba;
 }
 
+@font-face {
+    font-family: Beaufort;
+    src: url(../fonts/beaufort/BeaufortforLOL-Bold.ttf);
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../img/ai_bg.png);
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f8d3d387115887.5dae6de65de34.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
 }
-.nav-link {
-    color: black;
-
-}
 
 /* ------------------------- GLOBAL CLASSES --------------------------------- */
 
 .backgroundContainer {
-    background-color: rgba(245, 245, 245, 0.795);
+    background-color: #0a1428b4;
     padding: 3rem;
     margin: 1.5rem;
     border-radius: 5px;
     text-align: center;
     max-width: 565px;
+    color: #a09b8c;
+}
+
+.backgroundContainer h1 {
+    color: var(--goldTitle);
+    font-family: Beaufort, Arial, Helvetica, sans-serif;
+}
+
+.backgroundContainer h2 {
+    color: rgb(218, 218, 218);
+    font-family: Beaufort, Arial, Helvetica, sans-serif;
 }
 
 .noStyleList {
@@ -46,23 +65,12 @@ body {
     color: gray;
 }
 
-.create {
-    color: green;
-}
-
-.edit {
-    color: orangered;
-}
-
-.delete {
-    color: red;
-}
-
 form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    color: var(--goldTitle);
 }
 
 form input,
@@ -88,18 +96,20 @@ form textarea {
 }
 
 form input[type="submit"] {
-    background-color: var(--mainPurple);
-    border: 1px solid var(--darkerPurple);
+    background-color: var(--goldTitle);
+    border: 1px solid #463714;
     width: 100%;
     align-self: flex-end;
     margin-top: 0.5rem;
     font-weight: bold;
+    transition: all 0.2s ease-in;
 }
 
 form input[type="submit"]:hover {
-    background-color: white;
-    color: var(--darkerPurple);
-    border: 1px solid var(--darkerPurple);
+    background-color: whitesmoke;
+    background: linear-gradient(to right, #785a28 50%, #c89b3c);
+    color: whitesmoke;
+    border: 1px solid #463714;
     cursor: pointer;
 }
 
@@ -116,12 +126,13 @@ form input[type="submit"]:hover {
     border: none;
     background: none;
     font-size: 16px;
+    color: #a09b8c;
 }
 
 .loginOrRegister button:disabled {
-    color: black;
+    color: rgb(218, 218, 218);
     font-weight: bold;
-    border-bottom: 3px solid var(--darkerPurple);
+    border-bottom: 3px solid var(--goldTitle);
 }
 
 .errorInput {

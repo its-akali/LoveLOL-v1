@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Beaufort;
+    src: url(../fonts/beaufort/BeaufortforLOL-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+}
+
+#header {
+    height: 7rem;
+    background-image: linear-gradient(to bottom, #0ac8b9, #005a82, #091428);
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.logo {
+    height: 8vh;
+    border-radius: 100%;
+}
+
+.title-logo {
+    height: 6vh;
+    align-self: center;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #091428, #0a1428);
+    padding-top: 7rem;
+}
+
+.main__title {
+    color: #c89b3c;
+    margin: 2rem 0;
+    font-family: Beaufort;
+    font-size: 45px;
+}
+
+.main__post {
+    padding: 1rem;
+    display: grid;
+    justify-content: center;
+    max-width: 25%;
+    border: none;
+    background-color: #36938b;
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+
+.main__img-container {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.main__img-container img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.main__text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0.7rem 0;
+}
+
+.main__text-container h3 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
+}
+
+.main__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.main__buttons div button:first-child {
+    margin-right: 1rem;
+}
+
+.main__add-button {
+    background-color: #c89b3c;
+    color: white;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    border: 1px solid #c89b3c;
+    text-align: center;
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
+}
+
+.main__heart-button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 25px;
+}
+
+footer {
+    height: 7rem;
+    background-image: linear-gradient(to bottom, #091428, #005a82, #0ac8b9);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 2.5rem 2rem 2.5rem;
+}
+
+footer p:first-child {
+    font-size: 20px;
+}
+
+/*si sabes como arreglar el menu hamburguesa para que no se superponga arreglalo por favor por q no supe como
+/*menu hamburguesa*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-items li {
+    margin-right: 20px;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: #333;
+}
+#menu-toggle {
+    visibility: hidden;
+}
+
+/* Estilos para pantallas más pequeñas (máx. ancho de 768px) */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        top: 10vh;
+        right: 10px;
+        z-index: 3;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    .menu-items li {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .menu-items li a {
+        color: #333;
+    }
+
+    #menu-toggle:checked + .menu-icon {
+        color: black;
+    }
+
+    #menu-toggle:checked ~ .menu-items {
+        display: flex;
+    }
+
+    /* Agregar margen superior al main cuando el menú está abierto */
+    #menu-toggle:checked ~ #main {
+        transform: translateY(0%);
+    }
+
+    #menu-toggle {
+        visibility: hidden;
+    }
+
+    .main__post {
+        max-width: 40%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .main__post {
+        min-width: 70%;
+        max-width: 70%;
+    }
+}
