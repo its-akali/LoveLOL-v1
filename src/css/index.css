@@ -114,6 +114,22 @@ h3 {
     font-size: 25px;
 }
 
+.main__add-button,
+.main__heart-button {
+    transition: all 0.3s ease-in;
+}
+
+.main__add-button:hover,
+.main__heart-button:hover {
+    cursor: pointer;
+}
+
+.main__add-button:hover {
+    background: linear-gradient(to right, #785a28 50%, #c89b3c);
+    color: whitesmoke;
+    border: 1px solid #785a28;
+}
+
 footer {
     height: 7rem;
     background-image: linear-gradient(to bottom, #091428, #005a82, #0ac8b9);
