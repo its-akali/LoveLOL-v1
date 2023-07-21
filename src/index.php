@@ -1,5 +1,18 @@
 <?php
-include 'connect.php';
+
+require "database.php";
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    $mysqli = require 'database.php';
+
+    $sql = "SELECT * FROM `users` WHERE id={$_SESSION['user_id']}";
+
+    $result = $mysqli->query($sql);
+
+    $user = $result->fetch_assoc();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +35,13 @@ include 'connect.php';
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">&#9776;</label>
         <ul class="menu-items">
-            <li><a href="./login.php">Log In</a></li>
-            <li><a href="./register.php">Sign Up</a></li>
-            <!-- <li><a href="#">Profile</a></li> -->
+            <?php if (isset($user)) : ?>
+                <li style="color: whitesmoke;">Hola, <?= htmlspecialchars($user['user']) ?></li>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else : ?>
+                <li><a href="./login.php">Log In</a></li>
+                <li><a href="./register.php">Sign Up</a></li>
+            <?php endif; ?>
         </ul>
     </header>
     <main id="main">
@@ -32,7 +49,7 @@ include 'connect.php';
 
         <?php
         $sql = "SELECT * FROM `products`";
-        $result = mysqli_query($con, $sql);
+        $result = mysqli_query($mysqli, $sql);
 
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {

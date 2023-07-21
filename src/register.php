@@ -47,6 +47,6 @@
         </form>
     </main>
 </body>
-<!-- <script src="./js/register.js" type="module"></script> -->
+<script src="./js/register.js" type="module"></script>
 
 </html>

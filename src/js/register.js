@@ -25,9 +25,3 @@ document.querySelectorAll(".labelAndInput").forEach((div) => {
         }
     });
 });
-
-// Prevent default submit and check field values first
-document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("sent!");
-});

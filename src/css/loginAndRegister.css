@@ -147,3 +147,8 @@ form input[type="submit"]:hover {
     font-style: italic;
     font-size: 14px;
 }
+
+.logInLink {
+    color: #c89b3c;
+    text-decoration: none;
+}

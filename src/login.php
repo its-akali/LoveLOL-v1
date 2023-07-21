@@ -1,3 +1,33 @@
+<?php
+
+$is_invalid = false;
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $mysqli = require "database.php";
+    $sql = sprintf(
+        "SELECT * FROM `users` WHERE user='%s'",
+        $mysqli->real_escape_string($_POST['user'])
+    ); // Avoid SQL injection
+
+    $result = $mysqli->query($sql); // Execute query
+    $user = $result->fetch_assoc(); // Return query result in assoc array
+
+    if ($user) {
+        if (password_verify($_POST['password'], $user["password_hash"])) { // Check pass hash
+
+            session_start();
+            $_SESSION["user_id"] = $user["id"];
+
+            header('location: index.php');
+            exit;
+        }
+    }
+
+    $is_invalid = true;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,10 +47,13 @@
             <button id="registerButton">Regístrate</button>
         </div>
         <h2>Inicia sesión</h2>
+        <?php if ($is_invalid) : ?>
+            <span class="errorMessage" style="display: block;">Credenciales incorrectas.</span>
+        <?php endif; ?>
         <form method="post">
             <div class="labelAndInput">
                 <label for="user">Nombre de usuario</label>
-                <input type="text" placeholder="User" name="user" id="user" />
+                <input type="text" placeholder="User" name="user" id="user" value="<?= htmlspecialchars($_POST['user'] ?? "") ?>" />
                 <span class="errorMessage"></span>
             </div>
             <div class="labelAndInput">

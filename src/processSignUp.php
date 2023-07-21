@@ -23,5 +23,27 @@ if ($_POST['password'] !== $_POST['confPassword']) {
     die("Passwords do not match");
 }
 
-$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-var_dump($password_hash);
+$password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash pwd
+
+$mysqli = require "database.php";
+
+$sql = "INSERT INTO `users` (user, email, password_hash) VALUES (?, ?, ?)";
+
+$stmt = $mysqli->stmt_init();
+
+if (!$stmt->prepare($sql)) {
+    die("SQL error " . $mysqli->error);
+}
+
+$stmt->bind_param("sss", $_POST['user'], $_POST['email'], $password_hash);
+
+if ($stmt->execute()) {
+    header('location: signUpSuccessful.php');
+    exit;
+} else {
+    if ($mysqli->errno === 1062) {
+        die("Email already taken");
+    } else {
+        die($mysqli->error . " " . $mysqli->errno);
+    }
+}
